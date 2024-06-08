@@ -13,10 +13,16 @@
       reiciendis ad, illo porro veniam inventore quasi enim fugit! Unde officia
       officiis eligendi!
     </p>
+    <div>{{ data }}</div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { data } = await useFetch('/api/ninja?name=mario', {
+  method: 'post',
+  body: { age: 30 },
+});
+</script>
 
 <style scoped>
 h2 {
